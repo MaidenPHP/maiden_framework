@@ -1,54 +1,67 @@
 <?php
 
-class DB{
-
-	/*
-	 * singleton design pattern of database
-	*/
-
-	//prirvate instance of the database object
+/**
+ *
+ * singleton design pattern of database
+ *
+ * Wrapper for the PDO object
+ *
+ */
+class DB
+{
+	//private instance of the database object
 	private static $_instance = null;
+
 	private $_pdo;
 	private $_query;
 	private $_error = false;
 	public $_results;
 	private $_count = 0;
 
-	private function __construct(){
+	/**
+	 * DB constructor.
+	 *
+	 * Attempting to connect to the database
+	 */
+	private function __construct()
+	{
+		$host = 'localhost'; // use getenv(), and $_ENV['host'] ?
+		$db = 'database_name';
+		$username = 'root';
+		$password = '';
 
-		$host = Config::get('mysql/host');
-		$db = Config::get('mysql/db');
-		$username = Config::get('mysql/username');
-		$password = config::get('mysql/password');
-
-		//mysql_connect($host, $password, $password) or die(mysql_error());
-		//mysql_select_db($db) or die(mysql_error());
-
-		try{
-			$this->_pdo = new PDO('mysql:host='. $host . ';port=3306;dbname=' . $db, $username, $password);
+		try {
+			$this->_pdo = new PDO(
+				'mysql:host='. $host . ';port=3306;dbname=' . $db, $username, $password,
+				$options = []
+			);
 		}
-		catch(PDOException $error){
+		catch(PDOException $error) {
 			die($error->getMessage());
 		}
-
 	}
 
-	public static function getInstance(){
-		/*
-		 * if the db instance is NOT set then we will create one
-		 * otherwise, if its already set then we will just return the regular
-		 * db object, this make sure we NEVER have more than 1 instance of the
-		 * the DB object
-		*/
-		
-		if (!isset(self::$_instance)) {
+	/**
+	 * if the db instance is NOT set then we will create one
+	 * otherwise, if its already set then we will just return the regular
+	 * db object, this make sure we NEVER have more than 1 instance of the
+	 * the DB object
+	*/
+	public static function getInstance()
+	{
+		if (!isset(self::$_instance))
 			self::$_instance = new DB();
-		}
 
 		return self::$_instance;
-	
 	}
 
+	/**
+	 * Create
+	 *
+	 * @param $table
+	 * @param array $fields
+	 * @return bool
+	 */
 	public function insert($table, $fields = array()){
 		if (count($fields)) {
 			$keys = array_keys($fields);
@@ -73,9 +86,16 @@ class DB{
 		}
 
 		return false;
-
 	}
 
+	/**
+	 * Update
+	 *
+	 * @param $table
+	 * @param $id
+	 * @param array $fields
+	 * @return bool
+	 */
 	public function update($table, $id, $fields = array()){
 		$set = '';
 		$x = 1;
@@ -98,9 +118,16 @@ class DB{
 
 	}
 
+	/**
+	 * Raw Query
+	 *
+	 * @param $sql
+	 * @param array $params
+	 * @return $this
+	 */
 	public function query($sql, $params = array()){
 		$this->_error = false;
-		if (count($params) !== 0) {// if there are paramaters then we need to bind the values
+		if (count($params) !== 0) {// if there are parameters then we need to bind the values
 			if ($this->_query = $this->_pdo->prepare($sql)) {
 				$count = 1;
 				if (count($params)) {
@@ -188,5 +215,3 @@ class DB{
 	}
 
 }
-
-?>

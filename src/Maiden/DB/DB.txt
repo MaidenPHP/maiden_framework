@@ -1,0 +1,4 @@
+write tests for this 'ORM'
+configure phpunit
+
+figure ou the basic CRUD wrapper for the SQL

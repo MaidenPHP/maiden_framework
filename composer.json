@@ -1,0 +1,17 @@
+{
+  "require": {
+    "phpunit/phpunit": "4.8.23",
+    "mockery/mockery": "0.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "Acme\\": "src/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+    ],
+    "pre-update-cmd": [
+    ]
+  }
+}

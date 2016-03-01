@@ -1,0 +1,1 @@
+// setup watcher for phpunit
