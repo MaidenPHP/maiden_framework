@@ -4,8 +4,11 @@
     "mockery/mockery": "0.9"
   },
   "autoload": {
+    "files": [
+      "src/Maiden/Container/functions.php"
+    ],
     "psr-4": {
-      "Acme\\": "src/"
+      "Maiden\\": "src/"
     }
   },
   "scripts": {
