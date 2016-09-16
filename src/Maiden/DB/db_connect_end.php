@@ -12,7 +12,8 @@ try {
     $db = new PDO(
         "{$config['db_driver']}:host={$config['db_host']};dbname={$config['db_name']}",
         $config['db_username'],
-        $config['db_password']
+        $config['db_password'],
+        $options = []
     );
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
