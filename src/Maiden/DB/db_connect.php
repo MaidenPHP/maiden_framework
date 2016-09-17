@@ -1,13 +1,5 @@
 <?php
 
-$config = [
-    'db_driver' => 'mysql',
-    'db_host' => 'localhost',
-    'db_name' => 'oophp',
-    'db_username' => 'root',
-    'db_password' => '',
-];
-
 try {
     $db = new PDO(
         "{$config['db_driver']}:host={$config['db_host']};dbname={$config['db_name']}",
@@ -22,9 +14,9 @@ catch (PDOException $e) {
 }
 
 if (isset($db)) {
-    echo 'Connected';
+    //echo 'Connected';
 } elseif (isset($error)) {
     echo $error;
 } else {
-    echo 'Unknown error';
+    echo 'Unknown error DB not connected';
 }

@@ -10,7 +10,12 @@ interface AuthInterface
 
     function register(array $data);
 
+    function changePassword();
+
+    // sends an email to the user
     function forgotPassword();
 
     function getAuthUser();
+
+    function isLoggedIn();
 }

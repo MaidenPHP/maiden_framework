@@ -1,19 +1,22 @@
 <?php
 
-include "db_connect_end.php";
-
 // http://php.net/manual/en/class.pdostatement.php
 
-$sql = "SELECT * FROM cars";
+$sql = "SELECT * FROM cars ORDER BY price DESC";
 $cars = $db->query($sql);
 
-/*var_export($cars); // iterator
+// returns integer - 1 row is affected
+//$db->exec("INSERT INTO cars (column1,column2) VALUE (v1, v2)");
+//$db->exec("UPDATE cars SET col1 = '' WHERE 'name' = 'benz'");
+//$db->exec("DELETE FROM cars WHERE 'name' = 'benz'");
 
-foreach ($cars as $row) {
+prettyView($cars->fetch(4)); // iterator
+
+/*foreach ($cars as $row) {
     echo $row['make_id'], '&nbsp;'. $row['description'], '<br>';
 }*/
 
-//var_dump($cars->fetch()); // iterator
+//prettyView($cars->fetch()); // iterator
 //var_dump($cars->fetchObject());
 //var_dump($cars->fetchAll(PDO::FETCH_CLASS));
 //var_dump($cars->fetchColumn());
@@ -40,3 +43,4 @@ foreach ($cars as $row) {
  * valid
  *
  */
+

@@ -52,4 +52,27 @@
 		}
 	}
 
-?>
+
+// setup __autoload for every singe class
+/*spl_autoload_register(function($class) {
+    require_once 'classes/' . $class . '.php';
+});*/
+
+
+/*
+ * PHP standard interfaces
+ *
+ * PHP Standard PHP library
+ *
+ * 6 of them - http://php.net/manual/en/spl.interfaces.php
+ * Countable
+ * OuterIterator
+ * RecursiveIterator
+ * SeekableIterator
+ * SplObserver
+ * SplSubject
+ */
+
+
+
+
