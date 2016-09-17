@@ -1,11 +1,14 @@
 {
   "require": {
-    "phpunit/phpunit": "4.8.23",
+    "phpunit/phpunit": "5.5.*",
     "mockery/mockery": "0.9"
   },
   "autoload": {
     "files": [
       "src/Maiden/Container/functions.php"
+    ],
+    "classmap": [
+
     ],
     "psr-4": {
       "Maiden\\": "src/"

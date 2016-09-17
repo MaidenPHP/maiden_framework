@@ -4,5 +4,8 @@ namespace Maiden\Auth;
 
 class Auth
 {
-    function __construct();
+    function __construct()
+    {
+
+    }
 }
