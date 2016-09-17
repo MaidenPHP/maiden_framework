@@ -8,6 +8,7 @@ class Auth implements \AuthInterface
     {
 
     }
+
 }
 
 

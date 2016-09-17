@@ -1,10 +1,52 @@
+php frameworks
+---------------------------
+symfony 1, 2, 3
+zend 1, 2, 3
+laravel 3, 4, 5
+cake 1, 2, 3
+codeigniter 1, 2, 3
+yii 1,2
+
+falconphp
+fulephp
+phpixel
+kohana
+
+lumen
+silex
+slim
+fat-freephp
+
 php mvc
+http://www.phoenixframework.org/
+
+Topics
+---------------------------
+php 7
+design patterns
 
 
-past frameworks
+Resources
+---------------------------
 
-symfony
-zend
-laravel
-cake
-codeigniter
+Build a PHP MVC Application
+https://www.youtube.com/watch?v=OsCTzGASImQ&index=1&list=PLfdtiltiRHWGXVHXX09fxXDi-DqInchFD
+phpacademy/codecourse
+
+https://www.udemy.com/complete-php-mvc-tutorial/
+https://www.udemy.com/php-mvc-from-scratch/
+https://www.udemy.com/crash-course-learn-to-create-a-php-mvc-framework/
+https://www.udemy.com/learn-php-model-view-controller-pattern-php-mvc/
+https://www.udemy.com/php-mvc-framework-from-scratch/
+
+PHP: Create Your Own MVC (Part 1)
+https://www.youtube.com/watch?v=Aw28-krO7ZM
+jream
+
+Start Creating a Very Basic and Simple PHP MVC Framework From Scratch
+https://www.youtube.com/watch?v=6HJXR4G_szo
+
+Building a PHP Framework Part 1 Basic Configs and Routing
+https://www.youtube.com/watch?v=MnFRBuVKkMA
+
+https://www.codecourse.com/library/lessons/build-your-own-php-framework/
