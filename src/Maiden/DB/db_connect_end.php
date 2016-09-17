@@ -3,7 +3,7 @@
 $config = [
     'db_driver' => 'mysql',
     'db_host' => 'localhost',
-    'db_name' => 'persistent',
+    'db_name' => 'oophp',
     'db_username' => 'root',
     'db_password' => '',
 ];
