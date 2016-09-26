@@ -1,5 +1,3 @@
 <?php
 
-require 'src/api/app.php';
-
-require 'src/Maiden/DB/index.php';
+require __DIR__ . 'vendor/autoload.php';

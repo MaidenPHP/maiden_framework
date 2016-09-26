@@ -65,8 +65,8 @@ class Auth implements AuthInterface
     /**
      * @return mixed
      */
-    function isLoggedIn()
+    function isLoggedIn(): bool
     {
-        // TODO: Implement isLoggedIn() method.
+        return true;
     }
 }
