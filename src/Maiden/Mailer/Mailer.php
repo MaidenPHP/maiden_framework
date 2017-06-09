@@ -7,5 +7,13 @@
  */
 class Mailer
 {
+    function sendSMS()
+    {
 
+    }
+
+    function sendMail()
+    {
+
+    }
 }
