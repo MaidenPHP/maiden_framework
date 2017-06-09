@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Class Password
+ *
+ * http://php.net/manual/en/ref.password.php
+ *
+ * http://php.net/manual/en/faq.passwords.php
+ */
 class Password 
 {
     /**
@@ -14,27 +21,41 @@ class Password
 
     /**
      * @param $password
-     *
-     * password_hash()
+     * @return string
      */
-    function create($password) : void
+    function create(string $password) : string
     {
-        password_hash($password, PASSWORD_BCRYPT, [
+        return password_hash($password, PASSWORD_BCRYPT, [
             'cost' => 11,
             'salt' => 'any string here'
         ]);
     }
 
-    // password_needs_rehash()
-    function update($password)
+    /**
+     * @param string $password
+     * @return bool
+     */
+    function update(string $password) : bool
     {
-
+        return password_needs_rehash($password, 11);
     }
 
-    // password_verify()
-    function check()
+    /**
+     * @param string $password
+     * @param string $hash
+     * @return bool
+     */
+    function check(string $password, string $hash) : bool
     {
+        return password_verify($password, $hash);
+    }
 
+    /**
+     * @param string $hash
+     * @return array
+     */
+    function getInfo(string $hash) : array
+    {
+        return password_get_info($hash);
     }
 }
-
